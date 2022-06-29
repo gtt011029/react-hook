@@ -5,15 +5,20 @@ import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import BrowserRouter from './broserRouter';
+import Route from './route';
+import User from './user';
+import Name from './name';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <BrowserRouter>
+      <Route path="/" component={User} />
+      <Route path="/name" component={Name} />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

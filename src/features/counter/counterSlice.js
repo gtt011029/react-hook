@@ -11,6 +11,11 @@ const initialState = {
 // will call the thunk with the `dispatch` function as the first argument. Async
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
+//下面的函数被称为一个thunk，它允许我们执行异步逻辑。它
+//可以像常规动作一样调度:' dispatch(incrementAsync(10)) '。这
+//将以' dispatch '函数作为第一个参数调用thunk。异步
+//代码可以被执行，其他动作可以被分派。thunk是
+//通常用于异步请求。
 export const incrementAsync = createAsyncThunk(
   'counter/fetchCount',
   async (amount) => {
@@ -30,6 +35,10 @@ export const counterSlice = createSlice({
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
+      // Redux Toolkit允许我们在reducer中编写“变异”逻辑。它
+      //实际上不会改变状态，因为它使用了Immer库，
+      //检测到“草稿状态”的变化，并产生一个全新的
+      //不可变状态
       state.value += 1;
     },
     decrement: (state) => {
